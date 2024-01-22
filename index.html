@@ -10,7 +10,86 @@
     <title>World Clock</title>
   </head>
   <body>
-    <h1>World Clock</h1>
+    <div class="wrapper">
+      <div class="main">
+        <div class="left-container">
+          <div class="container">
+            <div class="clock">
+              <div style="--clr: #fff" id="hour" class="hand"><i></i></div>
+              <div style="--clr: #fff" id="min" class="hand"><i></i></div>
+              <div style="--clr: #080808" id="sec" class="hand"><i></i></div>
+
+              <span style="--i: 1"><b>1</b></span>
+              <span style="--i: 2"><b>2</b></span>
+              <span style="--i: 3"><b>3</b></span>
+              <span style="--i: 4"><b>4</b></span>
+              <span style="--i: 5"><b>5</b></span>
+              <span style="--i: 6"><b>6</b></span>
+              <span style="--i: 7"><b>7</b></span>
+              <span style="--i: 8"><b>8</b></span>
+              <span style="--i: 9"><b>9</b></span>
+              <span style="--i: 10"><b>10</b></span>
+              <span style="--i: 11"><b>11</b></span>
+              <span style="--i: 12"><b>12</b></span>
+            </div>
+          </div>
+          <div class="info-current-time" id="info-current-time">
+            <h1>It is saturday</h1>
+          </div>
+        </div>
+        <div class="right-container">
+          <h1>World Clock</h1>
+          <select name="" id="cities">
+            <option value="">Select a city</option>
+            <option value="Europe/Paris" id="paris">Paris🥐</option>
+            <option value="Australia/Sydney" id="sydney">Sydney🦘</option>
+            <option value="Asia/Tokyo" id="tokyo">Tokyo🗼</option>
+          </select>
+          <div class="cities-container">
+            <div class="city">
+              <h2>Portland</h2>
+              <div class="time">
+                <div class="hour">5</div>
+                <div class="minute">25 <span class="am-pm">am</span></div>
+              </div>
+              <div class="date">Mon, january 22, 2024</div>
+            </div>
+            <div class="city">
+              <h2>Portland</h2>
+              <div class="time">
+                <div class="hour">5:</div>
+                <div class="minute">25 <span class="am-pm">am</span></div>
+              </div>
+              <div class="date">Mon, january 22, 2024</div>
+            </div>
+            <div class="city">
+              <h2>Portland</h2>
+              <div class="time">
+                <div class="hour">5</div>
+                <div class="minute">25 <span class="am-pm">am</span></div>
+              </div>
+              <div class="date">Mon, january 22, 2024</div>
+            </div>
+            <div class="city">
+              <h2>Portland</h2>
+              <div class="time">
+                <div class="hour">5</div>
+                <div class="minute">25 <span class="am-pm">am</span></div>
+              </div>
+              <div class="date">Mon, january 22, 2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="train-container">
+      <img
+        id="train"
+        src="/Plus-add-on/media/output-onlinepngtools (1).png"
+        alt=""
+      />
+      <img id="track" src="/Plus-add-on/media/track2.png" alt="" />
+    </div>
     <footer>
       This project was coded with 🤍by Karine Magalhaes and is
       <a href="https://github.com/Kamagalhaes92/world-clock" target="_blank"
