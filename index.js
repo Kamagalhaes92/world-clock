@@ -25,6 +25,35 @@ function showSelectedCountry() {
   // Clear the existing interval before setting a new one
   clearInterval(intervalId);
 
+  if (citiesElement.value.length > 0) {
+    let currentTime = moment()
+      .tz(citiesElement.value)
+      .format("dddd, MMMM D, YYYY h:mm A");
+
+    let infoCurrentTime = document.querySelector("#info-current-time");
+    infoCurrentTime.innerHTML = `It is ${currentTime} in ${citiesElement.value}`;
+
+    // Update the analog clock based on the selected city's time zone
+    displayTime(citiesElement.value);
+
+    // Set a new interval for the selected city
+    intervalId = setInterval(() => displayTime(citiesElement.value), 1000);
+  } else {
+    // If no city is selected, show the local time on the clock and infoCurrentTime
+    let localTime = moment().format("dddd, MMMM D, YYYY h:mm A");
+
+    let infoCurrentTime = document.querySelector("#info-current-time");
+    infoCurrentTime.innerHTML = `It is ${localTime} locally`;
+
+    // Update the analog clock based on the local time
+    displayTime(moment.tz.guess());
+
+    // Set a new interval for the local time
+    intervalId = setInterval(() => displayTime(moment.tz.guess()), 1000);
+  }
+}
+
+function updateTime() {
   //Portland//
   let portandElement = document.querySelector("#portland");
   let portlandDateElement = portandElement.querySelector(".date");
@@ -86,34 +115,10 @@ function showSelectedCountry() {
   <span class="am-pm">
   ${moment().tz("Asia/Tokyo").format("a")}
   </span> `;
-
-  if (citiesElement.value.length > 0) {
-    let currentTime = moment()
-      .tz(citiesElement.value)
-      .format("dddd, MMMM D, YYYY h:mm A");
-
-    let infoCurrentTime = document.querySelector("#info-current-time");
-    infoCurrentTime.innerHTML = `It is ${currentTime} in ${citiesElement.value}`;
-
-    // Update the analog clock based on the selected city's time zone
-    displayTime(citiesElement.value);
-
-    // Set a new interval for the selected city
-    intervalId = setInterval(() => displayTime(citiesElement.value), 1000);
-  } else {
-    // If no city is selected, show the local time on the clock and infoCurrentTime
-    let localTime = moment().format("dddd, MMMM D, YYYY h:mm A");
-
-    let infoCurrentTime = document.querySelector("#info-current-time");
-    infoCurrentTime.innerHTML = `It is ${localTime} locally`;
-
-    // Update the analog clock based on the local time
-    displayTime(moment.tz.guess());
-
-    // Set a new interval for the local time
-    intervalId = setInterval(() => displayTime(moment.tz.guess()), 1000);
-  }
 }
+
+updateTime();
+setInterval(updateTime, 1000);
 
 // Call showSelectedCountry on page load
 document.addEventListener("DOMContentLoaded", showSelectedCountry);
