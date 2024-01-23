@@ -251,6 +251,41 @@ select {
   filter: grayscale(50%);
 }
 
+#city-info-container {
+  display: none;
+  padding: 20px;
+  background: rgb(166, 163, 161);
+  background: linear-gradient(
+    180deg,
+    rgba(166, 163, 161, 1) 0%,
+    rgba(223, 221, 216, 1) 50%,
+    rgba(242, 214, 179, 1) 100%
+  );
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  margin: 15px;
+  margin-top: 20px;
+}
+
+#city-info-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333; /* Set text color */
+  text-align: justify;
+  font-family: "roboto", sans-serif;
+}
+
+#go-back-button {
+  cursor: pointer;
+  color: #2b2b2c; /* Set button text color */
+  margin-top: 10px;
+  padding: 5px;
+}
+
+#go-back-button:hover {
+  text-decoration: underline; /* Add underline on hover for the button */
+}
+
 .train-container {
   overflow-x: hidden;
 }

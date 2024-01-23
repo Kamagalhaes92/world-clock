@@ -132,6 +132,59 @@ function updateTime() {
   </span> `;
 }
 
+let citiesinfoElement = document.querySelector("#cities");
+let cityInfoContainer = document.querySelector("#city-info-container");
+let cityInfoText = document.querySelector("#city-info-text");
+let goBackButton = document.querySelector("#go-back-button");
+
+function showCityInfo(city) {
+  // Hide the cities container and show the city info container
+  document.querySelector(".cities-container").style.display = "none";
+  cityInfoContainer.style.display = "block";
+
+  // Set the detailed information based on the selected city
+
+  if (city === "Europe/Athens") {
+    cityInfoText.textContent = `${"Athens is Europe’s oldest capital. Records show the city’s origins go back to around 3,400 years ago, also making it one of the oldest cities in the world. Having been inhabited for over 4,000 years, Athens has been submitted to nearly every form of government known to this day: monarchy, democracy, socialism, capitalism, even communism"}`;
+  } else if (city === "America/Cancun") {
+    cityInfoText.textContent =
+      "Cancún, a Mexican city on the Yucatán Peninsula bordering the Caribbean Sea, is known for its beaches, numerous resorts and nightlife. It’s composed of 2 distinct areas: the more traditional downtown area, El Centro, and Zona Hotelera, a long, beachfront strip of high-rise hotels, nightclubs, shops and restaurants. Cancun is also a famed destination for students during universities’ spring break period.";
+  } else if (city === "America/Lima") {
+    cityInfoText.textContent = `{"The city of Cusco, Peru is currently known as the cultural capital of the country, but its significant history goes back much further. As the oldest living city in the Americas, Cusco has been inhabited continuously for over 3,000 years. It was the historic capital of the Inca Empire from the 13th to 16th century until Spanish conquest, and now is a major tourist destination- receiving nearly 2 million visitors per year."}`;
+  } else if (city === "Asia/Istanbul") {
+    cityInfoText.textContent = `${"Istanbul, formerly known as Constantinople, has a rich history that spans over 2,500 years. It was the capital of both the Byzantine and Ottoman empires and has been influenced by both Western and Eastern cultures. Visitors can explore the iconic Hagia Sophia, which was once a church, then a mosque, and now a museum. The Topkapi Palace, the Blue Mosque, and the Grand Bazaar are also must-sees when in Istanbul."}`;
+  } else if (city === "America/New_York") {
+    cityInfoText.textContent = `${"Settled in 1624 and incorporated in 1898, New York City is the most populous city in the United States. As the center of the world, New York has a rich and diverse history, spanning from the earliest Dutch settlers and the Revolutionary War to the Statue of Liberty and the Sept. 11 terror attacks. But there are many intriguing, odd, and historical facts that some have forgotten or simply aren't aware of. Did you know some of the most popular parks once served as cemeteries for the indigent citizens of New York, and It used to be called New Amsterdam.? These and more comprise a tiny portion of the unique history that is the Big Apple."}`;
+  } else if (city === "Europe/Paris") {
+    cityInfoText.textContent = `${"Paris, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Believe it or not though, Paris wasn’t always called Paris, and the Eiffel Tower wasn’t supposed to be a permanent fixture. Here are three interesting facts about Paris: 1.The Eiffel Tower was supposed to be a temporary installation, intended to stand for 20 years after being built for the 1889 World Fair. 2-Paris was originally a Roman City called “Lutetia.” 3-There are at least three replicas of the Statue of Liberty in Paris. The most famous of them exists on an island in the middle of the Seine and looks towards her sister statue in New York."}`;
+  } else if (city === "Europe/Rome") {
+    cityInfoText.textContent = `${"Known as ‘The Eternal City’ Rome is stepped in history, with a legacy that spans thousands of years. The ancient city was the center of the Roman Empire, and its architecture, art, and culture have influenced Western civilization for centuries. Visitors can explore iconic landmarks such as the Colosseum, the Roman Forum, and the Pantheon. When in Rome, don't forget to visit the Vatican City, the smallest country in the world and home to the famous Sistine Chapel."}`;
+  } else if (city === "Australia/Sydney") {
+    cityInfoText.textContent =
+      "Sydney, capital of New South Wales and one of Australia's largest cities, is best known for its harbourfront Sydney Opera House, with a distinctive sail-like design. Massive Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower’s outdoor platform, the Skywalk, offers 360-degree views of the city and suburbs.";
+  } else if (city === "Asia/Tokyo") {
+    cityInfoText.textContent =
+      "Tokyo, Japan’s busy capital, mixes the ultramodern and the traditional, from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known for its towering gate and surrounding woods. The Imperial Palace sits amid large public gardens. The city's many museums offer exhibits ranging from classical art (in the Tokyo National Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).";
+  } else {
+    // Handle unknown or default case
+    cityInfoText.textContent = "City information not available.";
+  }
+}
+
+function goBack() {
+  // Show the cities container and hide the city info container
+  document.querySelector(".cities-container").style.display = "flex";
+  cityInfoContainer.style.display = "none";
+}
+
+// Call showCityInfo on city selection
+citiesElement.addEventListener("change", function () {
+  showCityInfo(citiesElement.value);
+});
+
+// Set up the "Go Back" button
+goBackButton.addEventListener("click", goBack);
+
 updateTime();
 setInterval(updateTime, 1000);
 
