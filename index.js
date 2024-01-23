@@ -26,12 +26,19 @@ function showSelectedCountry() {
   clearInterval(intervalId);
 
   if (citiesElement.value.length > 0) {
-    let currentTime = moment()
-      .tz(citiesElement.value)
-      .format("dddd, MMMM D, YYYY h:mm A");
+    let currentTime = moment().tz(citiesElement.value).format("h:mm A");
 
     let infoCurrentTime = document.querySelector("#info-current-time");
-    infoCurrentTime.innerHTML = `It is ${currentTime} in ${citiesElement.value}`;
+    infoCurrentTime.innerHTML = `<div class="local-time"> Current Time: <span>${currentTime}</span></div>
+            <div class="local-date">Current date <span>${moment()
+              .tz(citiesElement.value)
+              .format("MMMM D, YYYY.")}</span></div>
+            <div class="day-of-the-week">Day of the week: <span>${moment()
+              .tz(citiesElement.value)
+              .format("dddd")}.</span></div>
+            <div class="region">Region: <span> ${
+              citiesElement.value
+            }.</span></div>`;
 
     // Update the analog clock based on the selected city's time zone
     displayTime(citiesElement.value);
