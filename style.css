@@ -283,6 +283,27 @@ select {
     margin: 0px 10px;
   }
 
+  .main {
+    flex-direction: row;
+  }
+
+  .clock p {
+    font-size: 8px;
+    margin-top: 25px;
+  }
+
+  .left-container {
+    width: 50%;
+  }
+
+  .right-container {
+    width: 50%;
+  }
+
+  .select {
+    margin: 5px auto;
+  }
+
   .clock {
     width: 160px;
     height: 160px;
@@ -294,5 +315,36 @@ select {
 
   #track {
     height: 50px;
+  }
+
+  .cities-container {
+    flex-direction: column;
+  }
+
+  .city {
+    width: 100%;
+    margin: 5px auto;
+  }
+
+  /* Adjust font sizes */
+  h1 {
+    font-size: 18px;
+  }
+
+  p,
+  span,
+  div,
+  select,
+  .date {
+    font-size: 14px;
+  }
+
+  .hour,
+  .minute,
+  .seconds,
+  .am-pm,
+  .info-current-time {
+    font-size: 18px;
+    padding-top: 10px;
   }
 }
