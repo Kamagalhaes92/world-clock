@@ -136,6 +136,13 @@ footer {
   font-weight: 400;
 }
 
+.local-time {
+  border: 2px solid rgb(54, 54, 54);
+  font-size: 18px;
+  padding: 10px;
+  margin: 5px auto;
+}
+
 h1 {
   box-sizing: border-box;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -248,7 +255,7 @@ select {
   background-image: url("https://t4.ftcdn.net/jpg/02/51/12/11/360_F_251121174_5xQyUCqSrkswyLHbM9Ne8DQ8Qb0o1HGw.jpg");
   background-size: cover;
   color: white;
-  filter: grayscale(50%);
+  filter: saturate(45%);
 }
 
 #city-info-container {
@@ -279,7 +286,9 @@ select {
   cursor: pointer;
   color: #2b2b2c; /* Set button text color */
   margin-top: 10px;
-  padding: 5px;
+  padding: 8px;
+  border: 2px solid #86552c;
+  border-radius: 4px;
 }
 
 #go-back-button:hover {
@@ -377,9 +386,12 @@ select {
   .hour,
   .minute,
   .seconds,
-  .am-pm,
   .info-current-time {
     font-size: 18px;
     padding-top: 10px;
+  }
+
+  .hand i {
+    height: 35px;
   }
 }

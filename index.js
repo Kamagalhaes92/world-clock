@@ -115,7 +115,7 @@ function updateTime() {
   ${moment().tz("Europe/London").format("a")}
   </span> `;
 
-  //London//
+  //Tokyo//
   let tokyoElement = document.querySelector("#tokyo");
   let tokyoDateElement = tokyoElement.querySelector(".date");
   let tokyoHourElement = tokyoElement.querySelector(".hour");
@@ -145,7 +145,7 @@ function showCityInfo(city) {
   // Set the detailed information based on the selected city
 
   if (city === "Europe/Athens") {
-    cityInfoText.textContent = `${"Athens is Europe’s oldest capital. Records show the city’s origins go back to around 3,400 years ago, also making it one of the oldest cities in the world. Having been inhabited for over 4,000 years, Athens has been submitted to nearly every form of government known to this day: monarchy, democracy, socialism, capitalism, even communism"}`;
+    cityInfoText.textContent = `${"Athens is Europe’s oldest capital. Records show the city’s origins go back to around 3,400 years ago, also making it one of the oldest cities in the world. Having been inhabited for over 4,000 years, Athens has been submitted to nearly every form of government known to this day: monarchy, democracy, socialism, capitalism, even communism."}`;
   } else if (city === "America/Cancun") {
     cityInfoText.textContent =
       "Cancún, a Mexican city on the Yucatán Peninsula bordering the Caribbean Sea, is known for its beaches, numerous resorts and nightlife. It’s composed of 2 distinct areas: the more traditional downtown area, El Centro, and Zona Hotelera, a long, beachfront strip of high-rise hotels, nightclubs, shops and restaurants. Cancun is also a famed destination for students during universities’ spring break period.";
@@ -186,10 +186,16 @@ citiesElement.addEventListener("change", function () {
 goBackButton.addEventListener("click", goBack);
 
 updateTime();
-setInterval(updateTime, 1000);
+setInterval(function () {
+  updateTime();
+  showSelectedCountry(); // Call showSelectedCountry to update the local time
+}, 1000);
 
 // Call showSelectedCountry on page load
 document.addEventListener("DOMContentLoaded", showSelectedCountry);
 
 // Add an event listener for the city selection
-citiesElement.addEventListener("change", showSelectedCountry);
+citiesElement.addEventListener("change", function () {
+  showSelectedCountry();
+  showCityInfo(citiesElement.value);
+});
