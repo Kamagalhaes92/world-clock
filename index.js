@@ -40,10 +40,18 @@ function showSelectedCountry() {
     intervalId = setInterval(() => displayTime(citiesElement.value), 1000);
   } else {
     // If no city is selected, show the local time on the clock and infoCurrentTime
-    let localTime = moment().format("dddd, MMMM D, YYYY h:mm A");
+    let localTime = moment().format(" h:mm A");
 
     let infoCurrentTime = document.querySelector("#info-current-time");
-    infoCurrentTime.innerHTML = `It is ${localTime} locally`;
+    infoCurrentTime.innerHTML = `
+            <div class="local-time"> Current Time: <span>${localTime}</span></div>
+            <div class="local-date">Current date <span>${moment().format(
+              "MMMM D, YYYY."
+            )}</span></div>
+            <div class="day-of-the-week">Day of the week: <span>${moment().format(
+              "dddd"
+            )}.</span></div>
+            <div class="region">Region: <span> ${moment.tz.guess()}.</span></div>`;
 
     // Update the analog clock based on the local time
     displayTime(moment.tz.guess());

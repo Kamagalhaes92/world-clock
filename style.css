@@ -79,6 +79,15 @@ footer {
   align-items: center;
 }
 
+.clock p {
+  font-size: 12px;
+  border: 1px solid #6f6c6c;
+  border-radius: 8px;
+  margin-top: 90px;
+  padding: 5px;
+  color: #6f6c6c;
+}
+
 .clock span {
   position: absolute;
   transform: rotate(calc(30deg * var(--i)));
@@ -119,7 +128,12 @@ footer {
   margin: 0 auto;
   margin-top: 25px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  font-size: 1.3rem;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.info-current-time span {
+  font-weight: 400;
 }
 
 h1 {
@@ -213,24 +227,28 @@ select {
   background-image: url("https://oregonwild.org/sites/default/files/MtJeffersonJeremyCram.jpg");
   background-size: cover;
   color: white;
+  filter: saturate(45%);
 }
 
 .saopaulo:hover {
   background-image: url("https://wallpapers.com/images/hd/sao-paulo-brazil-sunset-cityscape-ebjtlapeynee12pl.jpg");
   background-size: cover;
   color: white;
+  filter: saturate(45%);
 }
 
 .london:hover {
-  background-image: url("https://lp-cms-production.imgix.net/2021-01/GettyRF_560530545.jpg?auto=format&fit=crop&ar=1:1&q=75&w=1200");
+  background-image: url("https://www.tripsavvy.com/thmb/qQ59TqUkLOoVREXGaoWNU3zRwRg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1047502134-ebf7496b41e047759046e17b91f57679.jpg");
   background-size: cover;
   color: white;
+  filter: saturate(45%);
 }
 
 .tokyo:hover {
-  background-image: url("https://static.toiimg.com/photo/47145223.cms");
+  background-image: url("https://t4.ftcdn.net/jpg/02/51/12/11/360_F_251121174_5xQyUCqSrkswyLHbM9Ne8DQ8Qb0o1HGw.jpg");
   background-size: cover;
   color: white;
+  filter: grayscale(50%);
 }
 
 .train-container {
