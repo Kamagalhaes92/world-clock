@@ -155,6 +155,7 @@ select {
   display: flex;
   text-align: center;
   flex-direction: row;
+  margin: 15px;
 }
 
 .hour {
@@ -178,6 +179,17 @@ select {
   padding: 5px;
 }
 
+.seconds {
+  border: 2px solid black;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-left: 0;
+  font-size: 18px;
+  padding: 5px;
+  padding-top: 15px;
+}
+
 .am-pm {
   flex-direction: column;
   font-size: 20px;
@@ -189,6 +201,38 @@ select {
 .date {
   padding: 5px;
 }
+
+.portland,
+.saopaulo,
+.london,
+.tokyo {
+  transition: all 2s ease-in-out;
+}
+
+.portland:hover {
+  background-image: url("https://oregonwild.org/sites/default/files/MtJeffersonJeremyCram.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.saopaulo:hover {
+  background-image: url("https://wallpapers.com/images/hd/sao-paulo-brazil-sunset-cityscape-ebjtlapeynee12pl.jpg");
+  background-size: cover;
+  color: white;
+}
+
+.london:hover {
+  background-image: url("https://lp-cms-production.imgix.net/2021-01/GettyRF_560530545.jpg?auto=format&fit=crop&ar=1:1&q=75&w=1200");
+  background-size: cover;
+  color: white;
+}
+
+.tokyo:hover {
+  background-image: url("https://static.toiimg.com/photo/47145223.cms");
+  background-size: cover;
+  color: white;
+}
+
 .train-container {
   overflow-x: hidden;
 }
@@ -196,7 +240,7 @@ select {
 #train {
   width: 45%;
   margin-bottom: -5%;
-  animation: mymove 7s infinite;
+  animation: mymove 10s infinite;
   position: relative;
 }
 
@@ -217,8 +261,20 @@ select {
 }
 
 @media only screen and (max-width: 600px) {
+  .wrapper {
+    margin: 0px 10px;
+  }
+
   .clock {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
+  }
+
+  #train {
+    width: 80%;
+  }
+
+  #track {
+    height: 50px;
   }
 }
