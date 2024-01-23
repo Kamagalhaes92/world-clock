@@ -52,7 +52,7 @@ function showSelectedCountry() {
     let infoCurrentTime = document.querySelector("#info-current-time");
     infoCurrentTime.innerHTML = `
             <div class="local-time"> Current Time: <span>${localTime}</span></div>
-            <div class="local-date">Current date <span>${moment().format(
+            <div class="local-date">Current date: <span>${moment().format(
               "MMMM D, YYYY."
             )}</span></div>
             <div class="day-of-the-week">Day of the week: <span>${moment().format(
