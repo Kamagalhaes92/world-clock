@@ -75,12 +75,16 @@ function updateTime() {
   let portlandHourElement = portandElement.querySelector(".hour");
   let portlandMinutesElement = portandElement.querySelector(".minute");
   let portlandSecsElement = portandElement.querySelector(".seconds");
-  portlandDateElement.innerHTML = moment().format("dddd, MMMM D, YYYY ");
-  portlandHourElement.innerHTML = moment().format("h");
+  portlandDateElement.innerHTML = moment()
+    .tz(" America/Los_Angeles")
+    .format("dddd, MMMM D, YYYY ");
+  portlandHourElement.innerHTML = moment()
+    .tz(" America/Los_Angeles")
+    .format("h");
   portlandMinutesElement.innerHTML = moment().format("mm");
   portlandSecsElement.innerHTML = `${moment().format("ss")} 
   <span class="am-pm">
-  ${moment().format("a")}
+  ${moment().tz(" America/Los_Angeles").format("a")}
   </span> `;
 
   //Sao Paulo//
