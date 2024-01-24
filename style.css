@@ -233,28 +233,28 @@ select {
 }
 
 .portland:hover {
-  background-image: url("https://oregonwild.org/sites/default/files/MtJeffersonJeremyCram.jpg");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/112/007/original/MtJeffersonJeremyCram.jpg?1706128450");
   background-size: cover;
   color: white;
   filter: saturate(45%);
 }
 
 .saopaulo:hover {
-  background-image: url("https://wallpapers.com/images/hd/sao-paulo-brazil-sunset-cityscape-ebjtlapeynee12pl.jpg");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/112/008/original/sao-paulo-brazil-sunset-cityscape-ebjtlapeynee12pl.jpg?1706128486");
   background-size: cover;
   color: white;
   filter: saturate(45%);
 }
 
 .london:hover {
-  background-image: url("https://www.tripsavvy.com/thmb/qQ59TqUkLOoVREXGaoWNU3zRwRg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1047502134-ebf7496b41e047759046e17b91f57679.jpg");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/112/009/original/GettyImages-1047502134-ebf7496b41e047759046e17b91f57679.jpg?1706128517");
   background-size: cover;
   color: white;
   filter: saturate(45%);
 }
 
 .tokyo:hover {
-  background-image: url("https://t4.ftcdn.net/jpg/02/51/12/11/360_F_251121174_5xQyUCqSrkswyLHbM9Ne8DQ8Qb0o1HGw.jpg");
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/112/010/original/360_F_251121174_5xQyUCqSrkswyLHbM9Ne8DQ8Qb0o1HGw.jpg?1706128554");
   background-size: cover;
   color: white;
   filter: saturate(45%);
